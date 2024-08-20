@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --primary-color: #3498db;
+    --secondary-color: #f1f1f1;
+    --accent-color: #e74c3c;
+    --hover-color: #2980b9;
+    --income-background: #dff0d8;
+    --expense-background: #f2dede;
+    --section-background: #ffffff;
+    --header-background: rgba(44, 62, 80, 0.85);
+    --header-color: #ecf0f1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://source.unsplash.com/random/1920x1080/?finance') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+header {
+    background-color: var(--header-background);
+    color: var(--header-color);
+    text-align: center;
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--section-background);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, h3, h4 {
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+#balance {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.inc_exp-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.inc_exp-container div {
+    width: 48%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.inc_exp-container h4 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.money-plus {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.money-minus {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.list li {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    border-left: 5px solid var(--primary-color);
+    margin-bottom: 10px;
+    padding: 15px;
+    list-style-type: none;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.list li.plus {
+    border-left-color: var(--primary-color);
+}
+
+.list li.minus {
+    border-left-color: var(--accent-color);
+}
+
+.list li:hover {
+    transform: scale(1.03);
+}
+
+.btn, .delete-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.btn:hover, .delete-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.delete-btn {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    color: #c0392b;
+}
+
+input[type="text"], input[type="number"] {
+    border: 1px solid var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: var(--primary-color);
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+form h3 {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+body {
+    background: url('https://source.unsplash.com/random/1920x1080/?finance') no-repeat center center fixed;
+    background-size: cover;
+    animation: backgroundAnimation 30s ease infinite;
+}
+
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fab:hover {
+    background-color: var(--hover-color);
+}
+
+body.dark-mode {
+    background: #333;
+    color: #fff;
+}
+
+header.dark-mode {
+    background-color: rgba(44, 62, 80, 0.7);
+    color: #ecf0f1;
+}
+
+.container.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+.inc_exp-container div.dark-mode {
+    background-color: #555;
+}
+
+input[type="text"].dark-mode, input[type="number"].dark-mode {
+    background-color: #555;
+    border-color: #777;
+    color: #fff;
+}
+
+.btn.dark-mode {
+    background-color: #777;
+}
+
+.fab.dark-mode {
+    background-color: #666;
+}
+
+.fab.dark-mode:hover {
+    background-color: #555;
+}
+
+.list li.dark-mode {
+    background-color: #555;
+    color: #fff;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: rgb(37, 32, 32);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-color);
+}
+
+.list li.dark-mode {
+    background-color: #666;
+}
+
+.btn.dark-mode, .delete-btn.dark-mode {
+    background-color: var(--hover-color);
+}
+
+.delete-btn.dark-mode {
+    color: #ecf0f1;
+}
+
+.theme-toggle.dark-mode {
+    background-color: #666;
+    color: #fff;
+}
+
+.money-plus.dark-mode {
+    color: #2ecc71;
+}
+
+.money-minus.dark-mode {
+    color: #e74c3c;
+}
+
